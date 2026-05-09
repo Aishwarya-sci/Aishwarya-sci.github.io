@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f3ee;
+    --rose: #c9a49a;
+    --rose-light: #e8d5d0;
+    --rose-deep: #a67c73;
+    --sage: #8a9e8c;
+    --sage-light: #c8d8c9;
+    --sage-deep: #5f7a61;
+    --ink: #2d2520;
+    --muted: #8a7d76;
+    --warm-white: #faf8f5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    background: rgba(247,243,238,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,164,154,0.2);
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--rose-deep); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 3rem 4rem;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-text { animation: fadeUp 0.9s ease both; }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .hero-cta:hover {
+    background: var(--rose-deep);
+    gap: 1rem;
+  }
+
+  .hero-visual {
+    animation: fadeUp 0.9s 0.2s ease both;
+    position: relative;
+  }
+
+  .hero-card {
+    background: var(--warm-white);
+    border: 1px solid var(--rose-light);
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -8px; right: -8px;
+    bottom: 8px; left: 8px;
+    border: 1px solid var(--sage-light);
+    z-index: -1;
+  }
+
+  .card-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.2rem;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .card-body {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--rose-light);
+    color: var(--rose-deep);
+    background: rgba(201,164,154,0.08);
+  }
+
+  .tag.sage {
+    border-color: var(--sage-light);
+    color: var(--sage-deep);
+    background: rgba(138,158,140,0.08);
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 6rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: var(--rose-light);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em { font-style: italic; color: var(--sage-deep); }
+
+  /* ── ABOUT ── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    border-top: 1px solid var(--rose-light);
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    color: #4a3c38;
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-facts {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .fact {
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-left: 3px solid var(--sage);
+  }
+
+  .fact-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .fact-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ── RESEARCH ── */
+  #research {
+    border-top: 1px solid var(--rose-light);
+  }
+
+  .research-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .research-card {
+    background: var(--warm-white);
+    border: 1px solid var(--rose-light);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .research-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--rose), var(--sage));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+
+  .research-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(45,37,32,0.08); }
+  .research-card:hover::after { transform: scaleX(1); }
+
+  .research-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .research-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .research-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── BLOG ── */
+  #blog {
+    border-top: 1px solid var(--rose-light);
+  }
+
+  .blog-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .blog-post {
+    background: var(--warm-white);
+    border: 1px solid rgba(201,164,154,0.3);
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .blog-post:hover { border-color: var(--rose); transform: translateY(-3px); }
+
+  .blog-post.featured {
+    border-color: var(--sage-light);
+    background: linear-gradient(135deg, var(--warm-white) 0%, rgba(200,216,201,0.15) 100%);
+  }
+
+  .post-category {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 1rem;
+  }
+
+  .post-category.personal { color: var(--rose-deep); }
+
+  .blog-post h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-post.featured h3 { font-size: 1.4rem; }
+
+  .blog-post p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .post-meta {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .post-meta::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--rose-light);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    border-top: 1px solid var(--rose-light);
+    text-align: center;
+    max-width: 600px;
+  }
+
+  #contact h2 { margin-bottom: 1rem; }
+
+  .contact-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid var(--rose-light);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    transition: all 0.3s ease;
+    background: var(--warm-white);
+  }
+
+  .contact-link:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rose-light);
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  footer em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    #home { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2.5rem; }
+    section { padding: 4rem 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .research-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    #contact { text-align: left; }
+    .contact-links { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-name">Aishwarya</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#blog">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Marine biologist & PhD researcher</p>
+    <h1>Hello, I'm<br><em>Aishwarya.</em></h1>
+    <p class="hero-desc">I study tiny organisms to understand the health of coral reefs. I also think a lot about chai, good books, and what it means to do meaningful science.</p>
+    <a href="#about" class="hero-cta">Learn more →</a>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <p class="card-label">Currently working on</p>
+      <p class="card-title">Foraminifera as bioindicators of coral reef ecosystem health</p>
+      <p class="card-body">Using large benthic foraminifera to track ecological change across depths and seasons in the Gulf of Aqaba, Red Sea.</p>
+      <div class="tags">
+        <span class="tag">Marine Biology</span>
+        <span class="tag sage">Microbiology</span>
+        <span class="tag">Red Sea</span>
+        <span class="tag sage">Computational Modeling</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="about-text">
+    <p class="section-label">About me</p>
+    <h2>Scientist.<br><em>Curious human.</em></h2>
+    <p>I'm a PhD researcher based in Israel, working at the intersection of marine biology, microbiology, and computational modeling. My research focuses on large benthic foraminifera — single-celled organisms with beautiful shells — as indicators of coral reef health.</p>
+    <p>My days involve fieldwork in the Red Sea, hours under the microscope, image analysis, and writing more than I ever expected a scientist to write. I find this work endlessly fascinating.</p>
+    <p>Outside the lab, I cook (South Asian food, always), read, make art, travel when I can, and firmly believe that a good cup of chai is its own kind of methodology.</p>
+  </div>
+
+  <div class="about-facts">
+    <div class="fact">
+      <p class="fact-label">Based in</p>
+      <p class="fact-value">Israel</p>
+    </div>
+    <div class="fact">
+      <p class="fact-label">Field site</p>
+      <p class="fact-value">Gulf of Aqaba, Red Sea</p>
+    </div>
+    <div class="fact">
+      <p class="fact-label">Research focus</p>
+      <p class="fact-value">Large benthic foraminifera & coral reef bioindicators</p>
+    </div>
+    <div class="fact">
+      <p class="fact-label">Tools & methods</p>
+      <p class="fact-value">Microscopy · NGS · Image analysis · Statistical modeling</p>
+    </div>
+    <div class="fact">
+      <p class="fact-label">Currently reading</p>
+      <p class="fact-value">Always something. Usually two books at once.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="reveal">
+  <p class="section-label">Research</p>
+  <h2>What I study &<br><em>why it matters</em></h2>
+  <p class="research-intro">Coral reefs are among the most biodiverse and threatened ecosystems on Earth. I use foraminifera — ancient, shell-forming protists — as living records of reef health across time and depth.</p>
+
+  <div class="research-grid">
+    <div class="research-card">
+      <span class="research-icon">🐚</span>
+      <h3>Seasonal Ecology of Foram Communities</h3>
+      <p>Tracking how foram assemblages shift across seasons and depths, and what those shifts reveal about reef conditions in the Gulf of Aqaba.</p>
+    </div>
+    <div class="research-card">
+      <span class="research-icon">🔬</span>
+      <h3>Symbiosis & Microbiome Flexibility</h3>
+      <p>Investigating how foraminifera associate with algal and bacterial partners — and whether those relationships are more flexible than we thought.</p>
+    </div>
+    <div class="research-card">
+      <span class="research-icon">🌿</span>
+      <h3>Epiphytic Foraminifera & Kleptoplasty</h3>
+      <p>Exploring <em>Planogypsina</em> — a poorly understood species that may retain functional chloroplasts from algae it consumes, a phenomenon called kleptoplasty.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="reveal">
+  <p class="section-label">Writing</p>
+  <h2>From the lab,<br><em>and beyond it.</em></h2>
+  <p class="blog-intro">I write about the experience of doing science — the fieldwork, the statistics, the slow progress, the occasional magic. And sometimes about everything else.</p>
+
+  <div class="blog-grid">
+    <a href="#" class="blog-post featured">
+      <p class="post-category">Research life</p>
+      <h3>What foraminifera taught me about paying attention</h3>
+      <p>You spend enough time looking through a microscope and you start to notice things differently. About the organisms. About yourself. About what it means to observe carefully.</p>
+      <p class="post-meta">Coming soon</p>
+    </a>
+    <a href="#" class="blog-post">
+      <p class="post-category personal">Personal</p>
+      <h3>On doing a PhD far from home</h3>
+      <p>The particular texture of building a life in a new country while also building a dissertation.</p>
+      <p class="post-meta">Coming soon</p>
+    </a>
+    <a href="#" class="blog-post">
+      <p class="post-category">Fieldwork</p>
+      <h3>Mornings in the Gulf of Aqaba</h3>
+      <p>Field notes, light, and the Red Sea before the day begins.</p>
+      <p class="post-meta">Coming soon</p>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <p class="section-label">Contact</p>
+  <h2>Let's be<br><em>in touch.</em></h2>
+  <p class="contact-desc">Whether you're a fellow researcher, a curious reader, or someone who wants to talk about foraminifera (or chai) — I'd love to hear from you.</p>
+  <div class="contact-links">
+    <a href="mailto:your@email.com" class="contact-link">
+      ✉ Email me
+    </a>
+    <a href="https://www.researchgate.net" target="_blank" class="contact-link">
+      ⬡ ResearchGate
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Made with care · <em>Aishwarya</em> · Gulf of Aqaba, Red Sea
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
