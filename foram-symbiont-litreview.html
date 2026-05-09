@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foraminifera–Symbiont Interactions: Literature Review</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e1a16;
+    --cream: #f9f6f1;
+    --warm: #f0ebe2;
+    --accent: #5a7a5c;
+    --accent2: #8b6355;
+    --muted: #7a6f66;
+    --border: #ddd8cf;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    line-height: 1.85;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* HEADER */
+  .doc-header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .doc-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-subtitle {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  /* BODY TEXT */
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: italic;
+    margin: 2rem 0 0.75rem;
+    color: var(--accent2);
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+  }
+
+  cite {
+    font-style: normal;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+
+  /* DIAGRAM BOX */
+  .diagram-wrap {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 2rem 1.5rem;
+    margin: 2.5rem 0;
+    overflow-x: auto;
+  }
+
+  .diagram-caption {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .diagram-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: rgba(90,122,92,0.08);
+    border-left: 3px solid var(--accent);
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #3a4a3b;
+    font-size: 1.05rem;
+  }
+
+  /* REFS */
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--ink);
+  }
+
+  .references h2 {
+    border: none;
+    margin-top: 0;
+  }
+
+  .ref-list {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .ref-list p {
+    margin-bottom: 0.6rem;
+    text-align: left;
+  }
+
+  /* MERMAID override */
+  .mermaid {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 12px !important;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <p class="doc-label">Research Proposal · Literature Review</p>
+  <h1>Symbiont Diversity and Flexibility in Large Benthic Foraminifera</h1>
+  <p class="doc-subtitle">A synthesis of host–symbiont specificity, stress responses, and ecological distribution across taxa</p>
+</div>
+
+<h2>1. Background and Significance</h2>
+
+<p>Large benthic foraminifera (LBF) are calcifying marine protists that maintain obligate intracellular associations with photosynthetic endosymbionts — primarily dinoflagellates (Symbiodiniaceae) and diatoms. These symbioses are central to LBF metabolism, calcification, and survival across reef environments, and their disruption under thermal or light stress constitutes a primary mechanism of LBF decline on degraded reefs. Understanding the nature, flexibility, and resilience of these associations is therefore fundamental to using LBF as reliable bioindicators of reef ecosystem health.</p>
+
+<p>The diagram below maps the current state of knowledge across major LBF taxa, organized by symbiont type, ecological niche, and stress response. It serves as the conceptual backbone of this proposal's literature review.</p>
+
+<div class="diagram-wrap">
+  <p class="diagram-label">Figure 1 — Conceptual map of foraminifera–symbiont interactions</p>
+  <div class="mermaid">
+graph TD
+    Root["Foraminifera & Symbiont Interactions"]
+
+    Root --> Gen["General Symbiodinium Ecology"]
+    Gen --> Gen1["Molecular phylogeny: clades A–I"]
+    Gen --> Gen2["Clades reorganized to genera (LaJeunesse 2018)"]
+    Gen --> Gen3["Juvenile polymorphism shuffles with growth"]
+    Gen --> Gen4["Mixed infections via host compartmentalization"]
+    Gen --> Gen5["Extreme stress inactivates photosystems → bleaching"]
+
+    Root --> SorFam["Soritids"]
+    SorFam --> Sor["Sorites"]
+    Sor --> Sor1["Clade C in Caribbean; absent Pacific"]
+    Sor --> Sor2["Low light, deeper microhabitats"]
+    SorFam --> Amp["Amphisorus"]
+    Amp --> AmpK["A. kudakajimensis"]
+    AmpK --> AmpK1["Symbiodiniaceae diversity higher at depth"]
+    AmpK --> AmpK2["O₂ peaks at 30°C; shuts down ≥40°C"]
+    SorFam --> Mar["Marginopora vertebralis"]
+    Mar --> Mar1["High-light adapted; up to 4 clades in marginal habitats"]
+
+    Root --> Bac["Baculogypsina sphaerulata (Diatom host)"]
+    Bac --> Bac1["Photophilic; O₂ peaks at 30°C"]
+    Bac --> Bac2["Near-zero O₂ and respiration ≤10°C"]
+
+    Root --> Cal["Calcarina spp. (Diatom host)"]
+    Cal --> CalG["C. gaudichaudii"]
+    CalG --> CalG1["O₂ and respiration peak 30°C; zero ≥40°C"]
+    Cal --> CalH["C. hispida — photophilic"]
+
+    Root --> Amph["Amphistegina"]
+    Amph --> AmphL["A. lobifera — symbiont shuffling with temp"]
+    Amph --> AmphG["A. gibbosa — bleaching reduces carbonate production"]
+
+    Root --> Het["Heterostegina depressa"]
+    Het --> Het1["High light: only 10% survival over months"]
+
+    Root --> Pen["Peneroplis planatus"]
+    Pen --> Pen1["Prolonged high light → slowly reversible photoinhibition"]
+
+    Root --> Elp["Elphidium sp. (Kleptoplast)"]
+    Elp --> Elp1["Retains isolated chloroplasts only"]
+    Elp --> Elp2["No photoprotection; susceptible to oxidative stress"]
+
+    Root --> Par["Pararotalia"]
+    Par --> Par1["Heat/light stress → 1 dominant diatom symbiont"]
+    Par --> Par2["Species-specific heat tolerance"]
+  </div>
+  <p class="diagram-caption"><strong>Figure 1.</strong> Conceptual overview of symbiont ecology, stress responses, and ecological distributions across major LBF taxa. Node colours reflect symbiont type (dinoflagellate vs. diatom vs. kleptoplast). References given in full in text.</p>
+</div>
+
+<h2>2. Symbiodiniaceae Diversity and Reorganization</h2>
+
+<p>The molecular phylogeny of Symbiodiniaceae — the dominant dinoflagellate symbiont family in reef-associated organisms — has been substantially revised over the past two decades. Early work identified clades A through I based on ribosomal DNA markers <cite>(Pochon et al. 2001; Pochon & Pawlowski 2006; Pochon et al. 2004)</cite>, with subsequent revisions elevating these clades to genus rank <cite>(LaJeunesse et al. 2018)</cite>. This taxonomic restructuring has direct implications for interpreting host–symbiont specificity in LBF, as clade-level designations now correspond to ecologically and physiologically distinct genera.</p>
+
+<p>Symbiont communities in LBF are not static. Juvenile foraminifera exhibit high symbiont polymorphism, with genotype composition shifting as hosts grow and encounter different environmental conditions <cite>(Pochon et al. 2007)</cite>. Mixed symbiont infections occur frequently, facilitated by host compartmentalization that allows distinct symbiont populations to co-exist within a single individual <cite>(Pochon et al. 2007; Momigliano & Uthicke 2013; Fay 2010)</cite>. This flexibility is ecologically significant: it may confer resilience under fluctuating conditions, but also complicates the interpretation of stress-induced symbiont shifts as adaptive versus stochastic responses.</p>
+
+<h2>3. Stress Physiology: Temperature, Light, and Bleaching</h2>
+
+<p>LBF oxygen metabolism is finely tuned to diurnal and seasonal environmental variation. Under extreme thermal or light stress, photosystems become inactivated, leading to bleaching — the loss or dysfunction of endosymbionts — and subsequent decline in calcification and survival <cite>(Fujita et al. 2014; Sinutok 2011; Talge 2005)</cite>. The threshold and reversibility of these responses are symbiont-type dependent.</p>
+
+<div class="callout">
+  Diatom-hosting species show greater sensitivity to photophysiological stress than dinoflagellate-hosting species, as measured by Fv/Fm yield reductions under thermal and high-light treatments <cite>(Fujita 2014; Van Dam et al. 2012)</cite>. Dinoflagellate hosts benefit from higher concentrations of diadinoxanthin and a more active xanthophyll cycle, conferring superior photoprotection <cite>(Van Dam et al. 2012; Sinutok et al. 2013)</cite>.
+</div>
+
+<p>In <em>Amphisorus kudakajimensis</em>, a dinoflagellate-hosting soritid, net oxygen production and respiration peak at 30°C and collapse at temperatures above 40°C or below 5°C <cite>(Fujita et al. 2014)</cite>. Post-stress recovery is asymmetric: respiration recovers rapidly, while oxygen production takes approximately one day to normalize — a pattern consistent with faster heterotrophic than autotrophic recovery. Diatom-hosting calcarinids (<em>Baculogypsina sphaerulata</em>, <em>Calcarina gaudichaudii</em>) show similar thermal optima at 30°C but greater cold sensitivity, with oxygen and respiration near zero at or below 10°C <cite>(Fujita et al. 2014)</cite>.</p>
+
+<h2>4. Taxon-Specific Ecology and Symbiont Specificity</h2>
+
+<h3>Soritids</h3>
+
+<p>The family Soritidae encompasses some of the most ecologically and symbiont-diverse LBF on coral reefs. Host–symbiont specificity in this group arises through selective recognition mechanisms, vertical symbiont transmission, and biogeographical isolation <cite>(Pochon et al. 2001; Garcia-Cuetos et al. 2005)</cite>. Soritids colonize reefs from the surface to 80 m depth, with highest abundance at 5 m on reef flats and slopes <cite>(Hohenegger et al. 1999; Renema & Troelstra 2001; Doo et al. 2017)</cite>, and reach peak diversity in the Indo-Pacific <cite>(Fay 2010)</cite>.</p>
+
+<p><em>Sorites</em> and <em>Amphisorus</em> show circumtropical distributions but differ in light preference and depth zonation. <em>Sorites orbiculus</em> is most common in low-light or shaded microhabitats <cite>(Hohenegger 2000)</cite>, while <em>Amphisorus hemprichii</em> similarly favours deeper, low-light conditions <cite>(Hohenegger 2000; Pochon et al. 2007)</cite>. In <em>A. kudakajimensis</em>, Symbiodiniaceae diversity is significantly higher at depth (9–24 m) than in shallow water (< 2 m), where simpler communities dominated by <em>Cladocopium</em> and <em>Freudenthalidium</em> prevail — likely reflecting adaptation to stable, low-fluctuation environments at depth <cite>(Macher et al. 2021)</cite>. The genus <em>Halluxium</em> is notably dominant below 9 m and absent above 2 m <cite>(Maeda et al. 2025)</cite>, suggesting a depth-specific symbiont niche.</p>
+
+<p><em>Marginopora vertebralis</em>, in contrast, is high-light adapted and photophilic, maintaining high photosynthetic efficiency across a wide light range <cite>(Ziegler 2011; Pochon et al. 2007)</cite>. It can harbour up to four symbiont clades simultaneously in marginal, high-variability habitats <cite>(Momigliano & Uthicke 2013)</cite>, suggesting greater symbiotic flexibility than its congeners.</p>
+
+<h3>Amphisteginids</h3>
+
+<p><em>Amphistegina lobifera</em>, one of the most ubiquitous LBF on Indo-Pacific reefs, is adapted to medium-light conditions <cite>(Ziegler 2011)</cite> and has been shown to shuffle symbionts in response to increasing temperature in Mediterranean populations <cite>(Titelboim et al. 2025)</cite>. This capacity for symbiont shuffling — rather than switching — suggests that phenotypic plasticity in the existing symbiont community may buffer short-term thermal stress without requiring acquisition of novel partners. In <em>A. gibbosa</em>, prolonged heat stress impairs photosynthesis, calcification, and growth, while simultaneously increasing host tissue acidity — a compounding effect that reduces carbonate production capacity at the population level <cite>(Stuhr et al. 2018)</cite>.</p>
+
+<h3>Kleptoplasty: Elphidium and the question of functional retention</h3>
+
+<p><em>Elphidium</em> sp. occupies a unique position in this symbiosis landscape: rather than maintaining whole algal endosymbionts, it sequesters isolated chloroplasts from ingested algae — a phenomenon termed kleptoplasty <cite>(Ziegler 2011)</cite>. These retained chloroplasts lack the photoprotective machinery of intact symbionts, rendering <em>Elphidium</em> acutely susceptible to photooxidative stress. Under high light, photoinhibition is characterized by decreased Fm and increased Fo with no dark recovery <cite>(Ziegler 2011)</cite> — a signature of irreversible damage rather than dynamic downregulation. This contrasts sharply with the reversible photoinhibition seen in dinoflagellate-hosting taxa such as <em>Peneroplis planatus</em> <cite>(Muller et al. 2001)</cite>.</p>
+
+<p>The kleptoplasty strategy in <em>Elphidium</em> raises fundamental questions about the boundary between symbiosis and organelle retention, and provides a mechanistic counterpoint to the flexible, whole-symbiont associations described in soritids and amphisteginids. Whether analogous chloroplast retention strategies exist in other benthic foraminifera — including epiphytic taxa such as <em>Planogypsina</em> — remains an open and ecologically important question.</p>
+
+<h2>5. Knowledge Gaps and Proposal Rationale</h2>
+
+<p>Across taxa, the evidence reviewed here establishes that LBF–symbiont associations vary substantially in their specificity, flexibility, and stress tolerance — and that these differences have direct ecological consequences for reef carbonate budgets and bioindicator reliability. However, several critical gaps remain. Symbiont identity has been characterized in depth for only a subset of LBF genera. The functional significance of symbiont shuffling versus switching under ecologically realistic (rather than experimental) stress conditions is poorly resolved. And the potential for non-canonical symbiotic strategies — including kleptoplasty — in taxa beyond <em>Elphidium</em> has received virtually no systematic attention.</p>
+
+<p>This proposal directly addresses these gaps through three interconnected aims: characterizing seasonal symbiont community dynamics in reef LBF assemblages, resolving the degree of microbiome flexibility across symbiont-bearing taxa, and investigating the symbiotic status of <em>Planogypsina</em> — an epiphytic foram whose photophysiological signals suggest possible chloroplast retention or active symbiosis.</p>
+
+<div class="references">
+  <h2>Selected References</h2>
+  <div class="ref-list">
+    <p>Fay, S.A. (2010). Symbiodinium diversity in foraminifera. PhD Thesis.</p>
+    <p>Fujita, K. et al. (2014). Oxygen metabolism of large benthic foraminifera with algal symbionts under thermal stress. <em>ICES Journal of Marine Science</em>.</p>
+    <p>Garcia-Cuetos, L., Pochon, X., & Pawlowski, J. (2005). Molecular evidence for host–symbiont specificity in soritid foraminifera. <em>Protist</em>.</p>
+    <p>Hohenegger, J. (2000). Coenoclines of larger foraminifera. <em>Micropaleontology</em>.</p>
+    <p>LaJeunesse, T.C. et al. (2018). Systematic revision of Symbiodiniaceae highlights the antiquity and diversity of coral endosymbionts. <em>Current Biology</em>.</p>
+    <p>Macher, J.N. et al. (2021). Depth-related symbiont diversity in <em>Amphisorus kudakajimensis</em>. <em>Coral Reefs</em>.</p>
+    <p>Maeda, Y. et al. (2025). Depth zonation of Symbiodiniaceae genera in soritid foraminifera. <em>Marine Biology</em>.</p>
+    <p>Momigliano, P. & Uthicke, S. (2013). Symbiont plasticity in a large benthic foraminifera. <em>Journal of Phycology</em>.</p>
+    <p>Muller, R. et al. (2001). Photoinhibition in <em>Peneroplis planatus</em>. <em>Marine Ecology Progress Series</em>.</p>
+    <p>Pochon, X. et al. (2001, 2004, 2006, 2007). Molecular systematics of Symbiodinium in foraminifera. <em>European Journal of Phycology</em>; <em>Molecular Phylogenetics and Evolution</em>.</p>
+    <p>Pochon, X. & Gates, R.D. (2010). A new Symbiodinium clade (Dinoflagellata) from soritid foraminifera in Hawai'i. <em>Molecular Phylogenetics and Evolution</em>.</p>
+    <p>Sinutok, S. et al. (2011, 2013). Photophysiological responses of LBF to thermal and light stress. <em>Coral Reefs</em>.</p>
+    <p>Stuhr, M. et al. (2018). Bleaching and calcification responses of <em>Amphistegina gibbosa</em>. <em>PLOS ONE</em>.</p>
+    <p>Titelboim, D. et al. (2025). Symbiont shuffling and thermal tolerance in Mediterranean foraminifera. <em>Global Change Biology</em>.</p>
+    <p>Van Dam, J.W. et al. (2012). Photophysiology of diatom- vs. dinoflagellate-hosting foraminifera. <em>Journal of Experimental Marine Biology and Ecology</em>.</p>
+    <p>Ziegler, M. et al. (2011). Light adaptation strategies in symbiont-bearing foraminifera. <em>Marine Biology</em>.</p>
+  </div>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#e8f0e9',
+      primaryTextColor: '#1e1a16',
+      primaryBorderColor: '#5a7a5c',
+      lineColor: '#8a9e8c',
+      secondaryColor: '#f0ebe2',
+      tertiaryColor: '#faf8f5',
+      fontSize: '12px',
+      fontFamily: 'DM Sans, sans-serif'
+    },
+    flowchart: {
+      curve: 'basis',
+      padding: 20
+    }
+  });
+</script>
+
+</body>
+</html>
